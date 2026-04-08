@@ -1,0 +1,15 @@
+.new-collection{
+    
+    margin-top: 17px;
+}
+
+.new-collection hr{
+    width: 200px;
+    height: 6px;
+    background-color:rgba(0, 0, 0, 0.865);
+    border: none;
+    margin: 10px auto;   
+}
+.new-collection-heading h2{
+    text-align: center;
+}

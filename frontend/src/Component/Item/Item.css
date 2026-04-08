@@ -1,0 +1,16 @@
+
+.card img{
+  height: 300px
+}
+
+.price{
+    display: flex;
+    justify-content:start;
+    gap: 20px;
+} 
+.price .card-text2{
+    text-decoration: line-through;
+}
+.card{
+  margin-bottom:25px;
+}

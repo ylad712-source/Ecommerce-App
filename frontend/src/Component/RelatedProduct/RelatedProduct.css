@@ -1,0 +1,40 @@
+.related-product h1{
+    text-align: center;
+}
+
+
+.related-product hr {
+    width: 200px;
+    height: 6px;
+    background-color:rgba(0, 0, 0, 0.865);
+    border: none;
+    margin: 10px auto; 
+
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    padding: 10px;
+    
+}
+
+.buttons button{
+    padding: 5px 25px;
+    border-radius: 27px;
+    font-size: 20px;
+    font-weight: 450;
+    background-color:#1f2937;
+    color: white;
+    border: none;
+}
+
+.buttons button:active{
+    background-color: #153461;
+}
+
+button:disabled{
+  background-color: #9ca3af ;
+}

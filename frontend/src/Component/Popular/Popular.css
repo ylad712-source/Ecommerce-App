@@ -1,0 +1,17 @@
+.popular-content {
+ 
+}
+
+.popular-content h2 {
+       text-align: center;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.popular-content hr {
+    width: 200px;
+    height: 6px;
+    background-color:rgba(0, 0, 0, 0.865);
+    border: none;
+    margin: 10px auto;   
+}
