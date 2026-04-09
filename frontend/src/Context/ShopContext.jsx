@@ -31,30 +31,6 @@ const ShopContextProvider = (props)=>{
 
   },[]);
     
-
-//  const addToCart=(product,size)=>{
-//       if(!size){
-//         alert("please select a size");
-//         return;
-//       }
-//        setCardItem(prev => {
-//      const exitingIndex =prev.findIndex(
-//       item => item.id === product.id && item.size===size
-//      );
-//      if(exitingIndex !== -1){
-//       const update = [...prev];
-//       update[exitingIndex].quantity+=1;
-//       return update
-//      }
-//      return[
-//       ...prev,
-//       {...product,
-//         size,
-//         quantity:1 }
-//      ]
-//  });
-//  }
-
 const addToCart = async (product,size)=>{
 
   if(!size){
@@ -71,7 +47,7 @@ const addToCart = async (product,size)=>{
   });
 
   if(res.data.success){
-    setCardItem(res.data.card); // 🔥 cart update
+    setCardItem(res.data.card);
   }
 
 };

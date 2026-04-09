@@ -27,38 +27,6 @@ const Card = () => {
       </div>
       {cardItem.length === 0 && <p>Your Cart is Empty </p>}
        
-      
-      {/* {cardItem.map((item, i) =>{ 
-       const product = all_product.find(
-          p => p.id === item.productid
-        );
-
-          if(!product) return null;
-
-           const itemTotalPrice = item.quantity * item.new_price;
-        return(
-        
-        <div className="card-item-format card-item-format-main" key={i} >
-          <img
-            src={item.images[0]}
-            alt="card-img"
-          />
-         
-            <p>{item.name}</p>
-            <p>Size: {item.size}</p>
-            <p>₹{item.new_price}</p>
-            <div> 
-              <button onClick={()=>decreaseQuntity(i)} disabled={item.quantity<=1}>-</button>
-             <span>{item.quantity}</span>
-            <button onClick={()=>increaseQuntity(i )}>+</button>
-            </div> 
-             <p>Total Price :{itemTotalPrice}</p>
-          
-          <button className="remove-card-button" onClick={()=>removeCard(i)}>X</button>
-        </div>
-        
-      )})} */}
-      
       {cardItem.map((item, i) =>{ 
 
   const product = all_product.find(
