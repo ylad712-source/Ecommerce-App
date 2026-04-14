@@ -4,10 +4,10 @@ import {Link} from 'react-router-dom'
 
 const Item = (props) => {
   return (
-    <div className='col-md-3'>
+   <div className='col-lg-3 col-md-4 col-sm-6 col-12'>
       <div className='item'>
         <div className="card" >
-          <Link to={`/product/${props.id}`}  ><img src={props.image} className="card-img-top" alt="..." /></Link>
+          <Link to={`/product/${props.id}`} ><img src={props.image} className="card-img-top" alt="..." /></Link>
           <div className="card-body">
             <h5 className="card-title">{props.name}</h5>
            <div className="price">

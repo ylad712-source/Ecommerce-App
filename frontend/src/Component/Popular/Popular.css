@@ -1,17 +1,94 @@
-.popular-content {
- 
+/* ================= MAIN SECTION ================= */
+.popular {
+  margin: 40px 60px;
+  padding: 40px 20px;
+  background: #f9f9f9;
+  border-radius: 20px;
 }
 
-.popular-content h2 {
-       text-align: center;
-    font-weight: 500;
-    font-size: 40px;
+/* ================= HEADING ================= */
+.popular .heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-.popular-content hr {
-    width: 200px;
-    height: 6px;
-    background-color:rgba(0, 0, 0, 0.865);
-    border: none;
-    margin: 10px auto;   
+.popular .heading h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+  text-align: center;
+  width: 100%;
+}
+
+.popular .heading hr {
+  width: 80px;
+  height: 3px;
+  background: #ff4141;
+  border: none;
+  margin: 10px auto 30px;
+  border-radius: 5px;
+}
+
+/* ================= GRID ================= */
+.popular .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* 4 items */
+.popular .row > * {
+  flex: 0 0 calc(25% - 20px);
+  max-width: calc(25% - 20px);
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 992px) {
+  .popular {
+    margin: 30px;
+    padding: 30px 20px;
+  }
+
+  .popular .heading h2 {
+    font-size: 24px;
+  }
+
+  .popular .row > * {
+    flex: 0 0 calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .popular {
+    margin: 20px;
+    padding: 25px 15px;
+  }
+
+  .popular .heading h2 {
+    font-size: 22px;
+  }
+
+  .popular .row > * {
+    flex: 0 0 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+  .popular .heading h2 {
+    font-size: 20px;
+  }
+
+  .popular .row > * {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }

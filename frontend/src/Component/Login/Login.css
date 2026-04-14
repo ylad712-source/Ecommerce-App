@@ -96,3 +96,71 @@
         padding: 30px 20px;
     }
 }
+/* ================= Base Fix ================= */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* center vertically */
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* ================= Tablet (<=768px) ================= */
+@media (max-width: 768px) {
+    .login-container {
+        max-width: 90%;
+        padding: 30px 20px;
+    }
+
+    .login-form h2 {
+        font-size: 22px;
+    }
+
+    .input-group input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .login-btn {
+        font-size: 15px;
+        padding: 10px;
+    }
+}
+
+/* ================= Mobile (<=480px) ================= */
+@media (max-width: 480px) {
+    .login-page {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .login-container {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 8px;
+        padding: 20px 15px;
+        box-shadow: none; /* clean mobile look */
+    }
+
+    .login-form h2 {
+        font-size: 20px;
+    }
+
+    .input-group label {
+        font-size: 14px;
+    }
+
+    .input-group input {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .login-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .login-link {
+        font-size: 13px;
+    }
+}

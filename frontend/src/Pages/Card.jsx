@@ -64,9 +64,19 @@ const Card = () => {
   )
 })}
 
-     <div className="total-price">
-      <p>{totalPrice}</p>
-     </div>
+    <div className="cart-summary">
+  <div className="summary-row">
+    <span>Subtotal</span>
+    <span>₹{totalPrice}</span>
+  </div>
+
+  <div className="summary-row total">
+    <span>Total</span>
+    <span>₹{totalPrice}</span>
+  </div>
+
+  <button className="checkout-btn">Proceed to Checkout</button>
+</div>
     </div>
   );
 };

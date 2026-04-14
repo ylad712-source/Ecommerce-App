@@ -50,9 +50,6 @@ const ProductDisplay = ({ product }) => {
           <span className="old">₹{product.old_price}</span>
         </div>
 
-        <p className="description">
-          {product.description}
-        </p>
 
         {/* SIZE */}
         <div className="sizes">
@@ -76,7 +73,9 @@ const ProductDisplay = ({ product }) => {
         >
           ADD TO CART
         </button>
-         
+         <p className="description">
+          {product.description}
+        </p>
 
         <p className="category">
           Category : <span>{product.category}</span>

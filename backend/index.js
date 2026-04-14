@@ -68,6 +68,11 @@ const Product = mongoose.model("Product",{
     type:String,
     required:true,
   },
+  type:{
+    type:"String",
+    enum:["new","popular"],  
+    default:"new"
+  },
    new_price:{
      type:Number,
      require:true,
@@ -75,6 +80,10 @@ const Product = mongoose.model("Product",{
   old_price:{
     type:Number,
     required:true,
+  },
+  description:{
+    type:String,
+    required:true
   },
   date:{
     type:Date,
@@ -127,6 +136,8 @@ app.post("/addproduct",async(req,res)=>{
     name:req.body.name,
     images:req.body.images,
     category:req.body.category,
+    type:req.body.type,
+    description:req.body.description,
     new_price:req.body.new_price,
     old_price:req.body.old_price,
     });

@@ -10,6 +10,7 @@ const Addproduct = () => {
     name:"",
     images:[],
     category:"womens",
+     type:"new", 
     new_price:"",
     old_price:"",
     description:""
@@ -87,6 +88,13 @@ const Addproduct = () => {
           <option value="kids">Kid</option>
         </select>
       </div>
+      <div className="addproduct-itemfield">
+  <p>Type</p>
+  <select name="type" onChange={changeHandler}>
+    <option value="new">New Collection</option>
+    <option value="popular">Popular</option>
+  </select>
+</div>
 
 <div className="addproduct-itemfield">
 
