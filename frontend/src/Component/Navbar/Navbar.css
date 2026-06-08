@@ -1,160 +1,200 @@
 /* ================= NAVBAR ================= */
-.navbar{
+.navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    padding: 16px;
-    border-bottom: 1px solid rgb(165, 160, 160);
+    padding: 16px 40px;
     background-color: black;
     color: white;
+    flex-wrap: wrap;
 }
 
 /* ================= LOGO ================= */
-.nav-logo{
+.nav-logo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-.nav-logo img{
+.nav-logo img {
     width: 70px;
     height: 50px;
 }
-.nav-logo p{
-    font-size: 38px;
+.nav-logo p {
+    font-size: 32px;
 }
 
-/* ================= MENU ================= */
-.nav-menu{
+/* ================= CATEGORY MENU ================= */
+.nav-menu {
     display: flex;
     list-style: none;
-    gap:50px;
-    font-size: 20px;
+    gap: 45px;
+    font-size: 21px;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    flex:2;
+   
 }
-.nav-menu li{
+
+.nav-menu li {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: 0.3s ease;
 }
+
 .nav-menu li a {
-  text-decoration: none;
-  color:white;
+    text-decoration: none;
+    color: white;
 }
-.nav-menu hr{
+
+/* Hover effect */
+.nav-menu li:hover {
+    transform: translateY(-0.1px);
+}
+
+.nav-menu li a:hover {
+    color: #f5c542;
+}
+
+/* Active underline */
+.nav-menu hr {
     border: none;
-    width: 90%;
+    width: 80%;
     height: 3px;
-    background-color: #f5c542;
+    background-color: gold;
+    margin-top: 5px;
+    border-radius: 5px;
 }
 
-/* ================= LOGIN / CART ================= */
-.nav-login-card{
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.nav-login-card img{
-     width: 40px;
-     height: 40px;
-}
-
-.nav-login-card button{
-    width:100px;
-    height:37px;
-    border-radius: 75px;
-    color:white;
-    background-color: rgb(20, 221, 50);
-    cursor: pointer;
-}
-
-/* ================= CART BADGE FIX ================= */
-.cart-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-.nav-card-count {
-  position: absolute;
-  top: -6px;
-  right: -10px;
-
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-
-  background: red;
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  box-shadow: 0 0 5px rgba(0,0,0,0.3);
-}
-
-/* ================= PROFILE ================= */
-.profile {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.profile button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.profile img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;   /* 🔥 circle banane ka main property */
-  object-fit: cover;    /* 🔥 image stretch nahi hogi */
-  border: 2px solid white;
-  display: block;
-}
-.profile img:hover {
-  transform: scale(1.1);
-  border-color: #f5c542;
-  transition: 0.3s;
+/* Active item up */
+.nav-menu li:has(hr) {
+    transform: translateY(-5px);
 }
 
 /* ================= SEARCH ================= */
 .nav-search {
-  position: relative;
-}
-.nav-search input {
-  padding: 8px 12px;
-  border-radius: 20px;
-  width: 200px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
-/* ================= DROPDOWN ================= */
+.nav-search input {
+    width: 100%;
+    max-width: 250px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+/* DROPDOWN */
 .search-dropdown {
-  position: absolute;
-  top: 40px;
-  width: 100%;
-  background: white;
-  color: black;
-  border-radius: 10px;
-  max-height: 250px;
-  overflow-y: auto;
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    max-width: 250px;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 100;
 }
 
 .search-item {
-  display: flex;
-  align-items: center;
-  padding: 8px;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    cursor: pointer;
 }
 .search-item:hover {
-  background: #eee;
+    background: #eee;
 }
 .search-item img {
-  width: 40px;
-  margin-right: 10px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+/* ================= RIGHT SIDE ================= */
+.nav-login-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-login-card button {
+    background: limegreen;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ================= CART ================= */
+.cart-wrapper {
+    position: relative;
+}
+.cart-wrapper img {
+    width: 35px;
+}
+
+.nav-card-count {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 2px 6px;
+}
+
+/* ================= PROFILE ================= */
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.profile img:hover {
+    transform: scale(1.1);
+    border-color: #f5c542;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu {
+        gap: 20px;
+        font-size: 18px;
+        margin: 10px 0;
+        flex-wrap: wrap;
+    }
+
+    .nav-search {
+        order: 3;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .nav-login-card {
+        margin-top: 10px;
+    }
 }

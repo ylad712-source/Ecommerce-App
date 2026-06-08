@@ -333,3 +333,127 @@ app.get("/profile",async(req,res)=>{
 app.listen(port,()=>{
     console.log("server is running " + port);
 });
+
+
+//Orders schema
+const Order = mongoose.model("Order",{
+
+  userid:{
+    type:String,
+    required:true
+  },
+  fullname:{
+    type:String,
+    required:true
+  },
+  email:{
+    type:String,
+    required:true
+  },
+   phone:{
+    type:String,
+    required:true
+  },
+
+  address:{
+    type:String,
+    required:true
+  },
+
+  city:{
+    type:String,
+    required:true
+  },
+
+  pincode:{
+    type:String,
+    required:true
+  },
+  products:[
+    {
+      productid:Number,
+      quantity:Number,
+      size:String
+    }
+  ],
+   totalAmount:{
+    type:Number,
+    required:true
+  },
+  orderStatus:{
+    type:String,
+    default:"pending"
+  },
+  date:{
+    type:Date,
+    default:Date.now
+  }
+
+})
+
+app.post("/placeorder",async(req,res)=>{
+  try{
+    
+    const {userid,fullname,email,phone,address,city,pincode,totalAmount}=req.body
+     
+    const user = await User.findById(userid);
+    if(!user){
+      return res.json({
+        success:false,
+        message:"user not found"
+      })
+    }
+    const newOrder = new Order({
+      userid,
+      fullname,
+      email,
+      phone,
+      address,
+      city,
+      pincode,
+      products:user.card,
+      totalAmount
+    })
+
+   await newOrder.save(); 
+    //clear user card after order
+    user.card=[];
+    await user.save();
+
+    res.json({
+      success:true,
+      message:"order placed Successfully"
+    })
+
+  }
+  catch(error){
+    res.json({
+      success:false,
+      message:error.message
+    })
+  }
+
+})
+
+app.get("/allorders", async(req,res)=>{
+
+  try{
+
+    const orders = await Order.find().sort({date:-1});
+
+    res.json({
+      success:true,
+      orders
+    })
+
+  }
+  catch(error){
+
+    res.json({
+      success:false,
+      message:error.message
+    })
+
+  }
+
+})

@@ -19,3 +19,16 @@
     border-radius: 50px;
     margin: 10px auto;   
 }
+/* Grid Layout */
+ .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Items (4 per row) */
+ .row > * {
+  flex: 0 0 calc(25% - 20px);
+  max-width: calc(25% - 20px);
+}

@@ -1,13 +1,14 @@
-const mongoose = require('mongoose');
-
-const mongoURI = "mongodb://localhost:27017/e-commerce";
+const mongoose = require("mongoose");
 
 const connectToMongo = async () => {
   try {
-    await mongoose.connect(mongoURI);
-    console.log("Connected to Mongo successfully");
+    console.log(process.env.MONGO_URL);
+
+    await mongoose.connect(process.env.MONGO_URL);
+
+    console.log("MongoDB Connected");
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 

@@ -14,7 +14,7 @@ const ShopCategory = (props) => {
        <hr />
       </div>
       <div className="men-image-container">
-        <div className="container">
+       <div className="container">
           <div className="row">
         {all_product.map((item,i)=>{
            if (props.category===item.category){

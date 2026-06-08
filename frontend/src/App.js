@@ -15,6 +15,7 @@ import ScrollToTop from './Component/ScrollToTop/ScrollToTop';
 import Signup from './Component/Signup/Signup';
 import Login from './Component/Login/Login';
 import Profile from './Component/Profile/Profile';
+import ProceedToPayment from './Pages/ProceedToPayment/ProceedToPayment';
 
 function App() {
   return (
@@ -34,7 +35,9 @@ function App() {
         <Route path='/Signup' element={<Signup/>} />
         <Route path='/Login' element={ <Login />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path='/Payment' element={<ProceedToPayment/>}/>
       </Routes>
+      
          <Footer />
       </Router>
     </>

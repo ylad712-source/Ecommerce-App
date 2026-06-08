@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import './CSS/Card.css'
-
+import { useNavigate } from 'react-router-dom'
+import Payment from './ProceedToPayment/ProceedToPayment'
 
 const Card = () => {
 
-  
+  const navigate=useNavigate();
 
   const { cardItem,all_product,removeCard , increaseQuntity,decreaseQuntity} = useContext(ShopContext);
   
@@ -75,7 +76,8 @@ const Card = () => {
     <span>₹{totalPrice}</span>
   </div>
 
-  <button className="checkout-btn">Proceed to Checkout</button>
+  <button className="checkout-btn" onClick={() => navigate('/Payment')}>
+    Proceed to Checkout</button>
 </div>
     </div>
   );

@@ -11,7 +11,7 @@ const NewCollection = () => {
     fetch("http://localhost:4000/getproduct")
     .then(res=>res.json())
     .then(data=>{
-      const filtered = data.filter(item=>item.type === "new").slice(0,8);
+      const filtered = data.filter(item=>item.type === "new").slice(-8).reverse();
       setProducts(filtered);
     })
   },[])

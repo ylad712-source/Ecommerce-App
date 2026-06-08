@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import addproduct from '../../assets/addproduct.png'
 import listofproduct from '../../assets/listofproduct.png'
 
+
 const Sidebar = () => {
   return (
     <div className='sidebar'>
@@ -18,6 +19,11 @@ const Sidebar = () => {
             <img src={listofproduct} alt="" />
              <p>Product List</p>
          </div>
+      </Link>
+      <Link to={'/orders'} style={{textDecoration:"none"}}>
+       <div className="sidebar-item">
+        <p>Orders</p>
+       </div>
       </Link>
     </div>
   )
